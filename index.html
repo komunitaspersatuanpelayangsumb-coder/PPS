@@ -6,21 +6,29 @@
   <title>PPS - Persatuan Pelayang Sumbar</title>
   <style>
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-    header { background:#004080; color:#fff; padding:20px; text-align:center; }
+    header { background:#004080; color:#fff; padding:20px; }
+    header .header-container { display:flex; justify-content:space-between; align-items:center; }
     nav { background:#333; padding:10px; }
     nav a { color:#fff; margin:0 10px; text-decoration:none; cursor:pointer; }
     nav a:hover { text-decoration:underline; }
     section { padding:20px; }
     footer { background:#004080; color:#fff; text-align:center; padding:10px; margin-top:20px; }
     .card { background:#fff; padding:15px; margin:10px 0; border-radius:5px; }
-    .page { display:none; } /* semua halaman disembunyikan dulu */
-    .active { display:block; } /* halaman aktif ditampilkan */
+    .page { display:none; }
+    .active { display:block; }
+    img.logo { height:80px; border-radius:8px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>PPS - Persatuan Pelayang Sumbar</h1>
-    <p>Website Resmi Komunitas</p>
+    <div class="header-container">
+      <div>
+        <h1>PPS - Persatuan Pelayang Sumbar</h1>
+        <p>Website Resmi Komunitas</p>
+      </div>
+      <!-- Logo PPS di kanan atas -->
+      <img src="images/logo-pps.png" alt="Logo PPS" class="logo">
+    </div>
   </header>
 
   <nav>
@@ -93,9 +101,7 @@
 
   <script>
     function showPage(pageId){
-      // sembunyikan semua halaman
       document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
-      // tampilkan halaman sesuai menu
       document.getElementById(pageId).classList.add('active');
     }
   </script>
